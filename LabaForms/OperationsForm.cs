@@ -1,20 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using LabaForms.Data;
 
-namespace LabaForms
+namespace LabaForms;
+
+public partial class OperationsForm : Form, IDisposable
 {
-    public partial class OperationsForm : Form
+    private readonly ApplicationDbContext _context;
+    public OperationsForm()
     {
-        public OperationsForm()
+        _context = new ApplicationDbContext();
+        InitializeComponent();
+    }
+
+    protected override void Dispose(bool disposing)
+    {
+        if (disposing)
         {
-            InitializeComponent();
+            if (components != null)
+            {
+                components.Dispose();
+            }
+            _context.Dispose();
         }
+        base.Dispose(disposing);
     }
 }

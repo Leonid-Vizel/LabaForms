@@ -1,4 +1,6 @@
-﻿using LabaForms.Materials;
+﻿using LabaForms.Data;
+using LabaForms.Materials;
+using Microsoft.EntityFrameworkCore;
 
 namespace LabaForms;
 
@@ -11,8 +13,7 @@ public partial class MenuForm : Form
     {
         var form = new MaterialsForm();
         materialsButton.Enabled = false;
-        form.FormClosing += (x, y) =>
-            materialsButton.Enabled = true;
+        form.FormClosing += (x, y) => ReEnableButton(materialsButton);
         form.Show();
     }
 
@@ -20,8 +21,7 @@ public partial class MenuForm : Form
     {
         var form = new PartsForm();
         partsButton.Enabled = false;
-        form.FormClosing += (x, y) =>
-            partsButton.Enabled = true;
+        form.FormClosing += (x, y) => ReEnableButton(partsButton);
         form.Show();
     }
 
@@ -29,8 +29,7 @@ public partial class MenuForm : Form
     {
         var form = new ProfessionsForm();
         professionsButton.Enabled = false;
-        form.FormClosing += (x, y) =>
-            professionsButton.Enabled = true;
+        form.FormClosing += (x, y) => ReEnableButton(professionsButton);
         form.Show();
     }
 
@@ -38,8 +37,7 @@ public partial class MenuForm : Form
     {
         var form = new TarifsForm();
         tarifsButton.Enabled = false;
-        form.FormClosing += (x, y) =>
-            tarifsButton.Enabled = true;
+        form.FormClosing += (x, y) => ReEnableButton(tarifsButton);
         form.Show();
     }
 
@@ -47,8 +45,7 @@ public partial class MenuForm : Form
     {
         var form = new OperationsForm();
         operationsButton.Enabled = false;
-        form.FormClosing += (x, y) =>
-            operationsButton.Enabled = true;
+        form.FormClosing += (x, y) => ReEnableButton(operationsButton);
         form.Show();
     }
 
@@ -56,8 +53,7 @@ public partial class MenuForm : Form
     {
         var form = new NormsForm();
         normsButton.Enabled = false;
-        form.FormClosing += (x, y) =>
-            normsButton.Enabled = true;
+        form.FormClosing += (x, y) => ReEnableButton(normsButton);
         form.Show();
     }
 
@@ -65,8 +61,28 @@ public partial class MenuForm : Form
     {
         var form = new QueriesForm();
         queriesButton.Enabled = false;
-        form.FormClosing += (x, y) =>
-            queriesButton.Enabled = true;
+        form.FormClosing += (x, y) => ReEnableButton(queriesButton);
         form.Show();
+    }
+
+    private void ReEnableButton(Button button)
+    {
+        button.Enabled = true;
+        Focus();
+    }
+
+    private async void OnLoad(object sender, EventArgs e)
+    {
+        try
+        {
+            using (ApplicationDbContext context = new ApplicationDbContext())
+            {
+                await context.Database.MigrateAsync();
+            }
+        }
+        catch (Exception ex)
+        {
+            MessageBox.Show("Ошибка!", $"Доступ к базе прерван ошибкой: \n{ex.Message}.");
+        }
     }
 }

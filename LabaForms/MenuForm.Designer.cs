@@ -133,6 +133,7 @@
             Name = "MenuForm";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Главное меню";
+            Load += OnLoad;
             ResumeLayout(false);
         }
 
