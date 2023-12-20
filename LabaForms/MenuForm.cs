@@ -56,11 +56,27 @@ public partial class MenuForm : Form
         form.Show();
     }
 
-    private void OnQueriesButtonClick(object sender, EventArgs e)
+    private void OnQuery1ButtonClick(object sender, EventArgs e)
     {
-        var form = new QueriesForm();
-        queriesButton.Enabled = false;
-        form.FormClosing += (x, y) => ReEnableButton(queriesButton);
+        var form = new Query1Form();
+        query1Button.Enabled = false;
+        form.FormClosing += (x, y) => ReEnableButton(query1Button);
+        form.Show();
+    }
+
+    private void OnQuery2ButtonClick(object sender, EventArgs e)
+    {
+        var form = new Query2Form();
+        query2Button.Enabled = false;
+        form.FormClosing += (x, y) => ReEnableButton(query2Button);
+        form.Show();
+    }
+
+    private void OnQuery3ButtonClick(object sender, EventArgs e)
+    {
+        var form = new Query3Form();
+        query3Button.Enabled = false;
+        form.FormClosing += (x, y) => ReEnableButton(query3Button);
         form.Show();
     }
 

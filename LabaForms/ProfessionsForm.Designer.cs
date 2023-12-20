@@ -81,6 +81,7 @@
             // dataGrid
             // 
             dataGrid.AllowUserToDeleteRows = false;
+            dataGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGrid.BackgroundColor = SystemColors.ButtonHighlight;
             dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGrid.Columns.AddRange(new DataGridViewColumn[] { idColumn, nameColumn });

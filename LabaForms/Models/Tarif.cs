@@ -8,4 +8,7 @@ public sealed class Tarif
     public int Id { get; set; }
     public decimal PerHour { get; set; }
     public List<Norm> Norms { get; set; } = null!;
+
+    public override string ToString()
+        => $"[ИД:{Id}] {PerHour}";
 }

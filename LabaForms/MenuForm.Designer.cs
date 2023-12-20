@@ -34,7 +34,9 @@
             tarifsButton = new Button();
             operationsButton = new Button();
             normsButton = new Button();
-            queriesButton = new Button();
+            query1Button = new Button();
+            query2Button = new Button();
+            query3Button = new Button();
             SuspendLayout();
             // 
             // materialsButton
@@ -103,23 +105,47 @@
             normsButton.UseVisualStyleBackColor = true;
             normsButton.Click += OnNormsButtonClick;
             // 
-            // queriesButton
+            // query1Button
             // 
-            queriesButton.Location = new Point(15, 291);
-            queriesButton.Margin = new Padding(4, 3, 4, 3);
-            queriesButton.Name = "queriesButton";
-            queriesButton.Size = new Size(231, 39);
-            queriesButton.TabIndex = 6;
-            queriesButton.Text = "Доп. запросы";
-            queriesButton.UseVisualStyleBackColor = true;
-            queriesButton.Click += OnQueriesButtonClick;
+            query1Button.Location = new Point(14, 291);
+            query1Button.Margin = new Padding(4, 3, 4, 3);
+            query1Button.Name = "query1Button";
+            query1Button.Size = new Size(231, 39);
+            query1Button.TabIndex = 6;
+            query1Button.Text = "Доп. запрос 1";
+            query1Button.UseVisualStyleBackColor = true;
+            query1Button.Click += OnQuery1ButtonClick;
+            // 
+            // query2Button
+            // 
+            query2Button.Location = new Point(14, 336);
+            query2Button.Margin = new Padding(4, 3, 4, 3);
+            query2Button.Name = "query2Button";
+            query2Button.Size = new Size(231, 39);
+            query2Button.TabIndex = 7;
+            query2Button.Text = "Доп. запрос 2";
+            query2Button.UseVisualStyleBackColor = true;
+            query2Button.Click += OnQuery2ButtonClick;
+            // 
+            // query3Button
+            // 
+            query3Button.Location = new Point(13, 381);
+            query3Button.Margin = new Padding(4, 3, 4, 3);
+            query3Button.Name = "query3Button";
+            query3Button.Size = new Size(231, 39);
+            query3Button.TabIndex = 8;
+            query3Button.Text = "Доп. запрос 3";
+            query3Button.UseVisualStyleBackColor = true;
+            query3Button.Click += OnQuery3ButtonClick;
             // 
             // MenuForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(260, 345);
-            Controls.Add(queriesButton);
+            ClientSize = new Size(260, 434);
+            Controls.Add(query3Button);
+            Controls.Add(query2Button);
+            Controls.Add(query1Button);
             Controls.Add(normsButton);
             Controls.Add(operationsButton);
             Controls.Add(tarifsButton);
@@ -145,7 +171,9 @@
         private System.Windows.Forms.Button tarifsButton;
         private System.Windows.Forms.Button operationsButton;
         private System.Windows.Forms.Button normsButton;
-        private System.Windows.Forms.Button queriesButton;
+        private System.Windows.Forms.Button query1Button;
+        private Button query2Button;
+        private Button query3Button;
     }
 }
 

@@ -20,9 +20,9 @@
             btnCancel = new Button();
             btnDelete = new Button();
             dataGrid = new DataGridView();
-            perHourBox = new NumericUpDown();
             idColumn = new DataGridViewTextBoxColumn();
             perHourColumn = new DataGridViewTextBoxColumn();
+            perHourBox = new NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)dataGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)perHourBox).BeginInit();
             SuspendLayout();
@@ -73,6 +73,7 @@
             // dataGrid
             // 
             dataGrid.AllowUserToDeleteRows = false;
+            dataGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGrid.BackgroundColor = SystemColors.ButtonHighlight;
             dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGrid.Columns.AddRange(new DataGridViewColumn[] { idColumn, perHourColumn });
@@ -84,15 +85,6 @@
             dataGrid.Size = new Size(309, 377);
             dataGrid.TabIndex = 10;
             dataGrid.DoubleClick += OnGridDoubleClick;
-            // 
-            // perHourBox
-            // 
-            perHourBox.Font = new Font("Comic Sans MS", 10.2F, FontStyle.Bold);
-            perHourBox.Location = new Point(70, 15);
-            perHourBox.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
-            perHourBox.Name = "perHourBox";
-            perHourBox.Size = new Size(274, 26);
-            perHourBox.TabIndex = 12;
             // 
             // idColumn
             // 
@@ -111,6 +103,15 @@
             perHourColumn.Name = "perHourColumn";
             perHourColumn.ReadOnly = true;
             perHourColumn.Width = 125;
+            // 
+            // perHourBox
+            // 
+            perHourBox.Font = new Font("Comic Sans MS", 10.2F, FontStyle.Bold);
+            perHourBox.Location = new Point(70, 15);
+            perHourBox.Maximum = new decimal(new int[] { 100000, 0, 0, 0 });
+            perHourBox.Name = "perHourBox";
+            perHourBox.Size = new Size(274, 26);
+            perHourBox.TabIndex = 12;
             // 
             // TarifsForm
             // 

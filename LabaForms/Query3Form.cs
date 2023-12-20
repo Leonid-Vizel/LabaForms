@@ -1,11 +1,13 @@
 ﻿using LabaForms.Data;
+using LabaForms.Queries;
+using Microsoft.EntityFrameworkCore;
 
 namespace LabaForms;
 
-public partial class QueriesForm : Form, IDisposable
+public partial class Query3Form : Form, IDisposable
 {
     private readonly ApplicationDbContext _context;
-    public QueriesForm()
+    public Query3Form()
     {
         _context = new ApplicationDbContext();
         InitializeComponent();
@@ -22,5 +24,10 @@ public partial class QueriesForm : Form, IDisposable
             _context.Dispose();
         }
         base.Dispose(disposing);
+    }
+
+    private async void OnLoad(object sender, EventArgs e)
+    {
+        dataGrid.DataSource = await _context.Query3.FromSqlRaw(Query3Result.Query).AsNoTracking().ToListAsync();
     }
 }

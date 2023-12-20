@@ -12,4 +12,7 @@ public sealed class Material
     public string Measurement { get; set; } = null!;
     public decimal? PlanPrice { get; set; }
     public List<Operation> Operations { get; set; } = null!;
+
+    public override string ToString()
+        => $"[ИД:{Id}] {Name} ({Measurement})";
 }

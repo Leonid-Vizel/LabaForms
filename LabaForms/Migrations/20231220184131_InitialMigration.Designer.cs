@@ -53,7 +53,7 @@ namespace LabaForms.Migrations
 
             modelBuilder.Entity("LabaForms.Models.Norm", b =>
                 {
-                    b.Property<int>("PartId")
+                    b.Property<int>("PartIdColumn")
                         .HasColumnType("integer");
 
                     b.Property<int>("OperationId")
@@ -65,7 +65,7 @@ namespace LabaForms.Migrations
                     b.Property<decimal>("PieceMinuteTime")
                         .HasColumnType("numeric");
 
-                    b.Property<int>("ProfessionId")
+                    b.Property<int>("ProfessionIdColumn")
                         .HasColumnType("integer");
 
                     b.Property<string>("Qualification")
@@ -73,16 +73,16 @@ namespace LabaForms.Migrations
                         .HasMaxLength(2000)
                         .HasColumnType("character varying(2000)");
 
-                    b.Property<int>("TarifId")
+                    b.Property<int>("TarifIdColumn")
                         .HasColumnType("integer");
 
-                    b.HasKey("PartId", "OperationId");
+                    b.HasKey("PartIdColumn", "OperationId");
 
                     b.HasIndex("OperationId");
 
-                    b.HasIndex("ProfessionId");
+                    b.HasIndex("ProfessionIdColumn");
 
-                    b.HasIndex("TarifId");
+                    b.HasIndex("TarifIdColumn");
 
                     b.ToTable("Norms");
                 });
@@ -101,14 +101,14 @@ namespace LabaForms.Migrations
                     b.Property<decimal>("NeededAmount")
                         .HasColumnType("numeric");
 
-                    b.Property<int>("PartId")
+                    b.Property<int>("PartIdColumn")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
                     b.HasIndex("MaterialId");
 
-                    b.HasIndex("PartId");
+                    b.HasIndex("PartIdColumn");
 
                     b.ToTable("Operations");
                 });
@@ -186,19 +186,19 @@ namespace LabaForms.Migrations
 
                     b.HasOne("LabaForms.Models.Part", "Part")
                         .WithMany("Norms")
-                        .HasForeignKey("PartId")
+                        .HasForeignKey("PartIdColumn")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("LabaForms.Models.Profession", "Profession")
                         .WithMany("Norms")
-                        .HasForeignKey("ProfessionId")
+                        .HasForeignKey("ProfessionIdColumn")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("LabaForms.Models.Tarif", "Tarif")
                         .WithMany("Norms")
-                        .HasForeignKey("TarifId")
+                        .HasForeignKey("TarifIdColumn")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -221,7 +221,7 @@ namespace LabaForms.Migrations
 
                     b.HasOne("LabaForms.Models.Part", "Part")
                         .WithMany("Operations")
-                        .HasForeignKey("PartId")
+                        .HasForeignKey("PartIdColumn")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

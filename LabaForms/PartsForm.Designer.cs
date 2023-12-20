@@ -22,6 +22,11 @@
             btnCancel = new Button();
             btnDelete = new Button();
             dataGrid = new DataGridView();
+            idColumn = new DataGridViewTextBoxColumn();
+            nameColumn = new DataGridViewTextBoxColumn();
+            measurementColumn = new DataGridViewTextBoxColumn();
+            planPriceColumn = new DataGridViewTextBoxColumn();
+            typeColumn = new DataGridViewTextBoxColumn();
             measurementLabel = new Label();
             measurementBox = new TextBox();
             priceBox = new NumericUpDown();
@@ -29,11 +34,6 @@
             typeBox = new ComboBox();
             typeLabel = new Label();
             materialBindingSource = new BindingSource(components);
-            idColumn = new DataGridViewTextBoxColumn();
-            nameColumn = new DataGridViewTextBoxColumn();
-            measurementColumn = new DataGridViewTextBoxColumn();
-            planPriceColumn = new DataGridViewTextBoxColumn();
-            typeColumn = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dataGrid).BeginInit();
             ((System.ComponentModel.ISupportInitialize)priceBox).BeginInit();
             ((System.ComponentModel.ISupportInitialize)materialBindingSource).BeginInit();
@@ -94,6 +94,7 @@
             // dataGrid
             // 
             dataGrid.AllowUserToDeleteRows = false;
+            dataGrid.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dataGrid.BackgroundColor = SystemColors.ButtonHighlight;
             dataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGrid.Columns.AddRange(new DataGridViewColumn[] { idColumn, nameColumn, measurementColumn, planPriceColumn, typeColumn });
@@ -106,6 +107,45 @@
             dataGrid.Size = new Size(608, 377);
             dataGrid.TabIndex = 10;
             dataGrid.DoubleClick += OnGridDoubleClick;
+            // 
+            // idColumn
+            // 
+            idColumn.DataPropertyName = "Id";
+            idColumn.HeaderText = "ИД";
+            idColumn.MinimumWidth = 6;
+            idColumn.Name = "idColumn";
+            idColumn.ReadOnly = true;
+            idColumn.Width = 125;
+            // 
+            // nameColumn
+            // 
+            nameColumn.DataPropertyName = "Name";
+            nameColumn.HeaderText = "Название";
+            nameColumn.MinimumWidth = 6;
+            nameColumn.Name = "nameColumn";
+            nameColumn.ReadOnly = true;
+            nameColumn.Width = 125;
+            // 
+            // measurementColumn
+            // 
+            measurementColumn.DataPropertyName = "Measurement";
+            measurementColumn.HeaderText = "Единицы";
+            measurementColumn.Name = "measurementColumn";
+            measurementColumn.ReadOnly = true;
+            // 
+            // planPriceColumn
+            // 
+            planPriceColumn.DataPropertyName = "PlanPrice";
+            planPriceColumn.HeaderText = "Стоимость";
+            planPriceColumn.Name = "planPriceColumn";
+            planPriceColumn.ReadOnly = true;
+            // 
+            // typeColumn
+            // 
+            typeColumn.DataPropertyName = "DetailTypeName";
+            typeColumn.HeaderText = "Тип";
+            typeColumn.Name = "typeColumn";
+            typeColumn.ReadOnly = true;
             // 
             // measurementLabel
             // 
@@ -166,45 +206,6 @@
             // materialBindingSource
             // 
             materialBindingSource.DataSource = typeof(Models.Material);
-            // 
-            // idColumn
-            // 
-            idColumn.DataPropertyName = "Id";
-            idColumn.HeaderText = "ИД";
-            idColumn.MinimumWidth = 6;
-            idColumn.Name = "idColumn";
-            idColumn.ReadOnly = true;
-            idColumn.Width = 125;
-            // 
-            // nameColumn
-            // 
-            nameColumn.DataPropertyName = "Name";
-            nameColumn.HeaderText = "Название";
-            nameColumn.MinimumWidth = 6;
-            nameColumn.Name = "nameColumn";
-            nameColumn.ReadOnly = true;
-            nameColumn.Width = 125;
-            // 
-            // measurementColumn
-            // 
-            measurementColumn.DataPropertyName = "Measurement";
-            measurementColumn.HeaderText = "Единицы";
-            measurementColumn.Name = "measurementColumn";
-            measurementColumn.ReadOnly = true;
-            // 
-            // planPriceColumn
-            // 
-            planPriceColumn.DataPropertyName = "PlanPrice";
-            planPriceColumn.HeaderText = "Стоимость";
-            planPriceColumn.Name = "planPriceColumn";
-            planPriceColumn.ReadOnly = true;
-            // 
-            // typeColumn
-            // 
-            typeColumn.DataPropertyName = "DetailTypeName";
-            typeColumn.HeaderText = "Тип";
-            typeColumn.Name = "typeColumn";
-            typeColumn.ReadOnly = true;
             // 
             // PartsForm
             // 

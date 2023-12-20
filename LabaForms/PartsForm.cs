@@ -7,7 +7,7 @@ namespace LabaForms;
 public partial class PartsForm : Form, IDisposable
 {
     private readonly List<EnumComboItem<DetailType>> _comboDataSource
-        = EnumExtensions.GetComboItems<DetailType>();
+        = ComboExtensions.GetEnumComboItems<DetailType>();
     private readonly ApplicationDbContext _context;
     private Part? _current = null;
     public PartsForm()

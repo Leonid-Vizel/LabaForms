@@ -144,12 +144,12 @@ namespace LabaForms.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Norms_ProfessionId",
                 table: "Norms",
-                column: "ProfessionId");
+                column: "ProfessionIdColumn");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Norms_TarifId",
                 table: "Norms",
-                column: "TarifId");
+                column: "TarifIdColumn");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Operations_MaterialId",
@@ -159,7 +159,7 @@ namespace LabaForms.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Operations_PartId",
                 table: "Operations",
-                column: "PartId");
+                column: "PartIdColumn");
         }
 
         /// <inheritdoc />

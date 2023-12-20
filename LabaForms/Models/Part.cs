@@ -17,6 +17,9 @@ public sealed class Part
         => DetailType.GetDisplayName();
     public List<Norm> Norms { get; set; } = null!;
     public List<Operation> Operations { get; set; } = null!;
+
+    public override string ToString()
+        => $"[ИД:{Id}] {Name} ({DetailTypeName})";
 }
 
 public enum DetailType
