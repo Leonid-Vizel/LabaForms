@@ -40,6 +40,7 @@
             // 
             nameBox.Font = new Font("Comic Sans MS", 10.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             nameBox.Location = new Point(60, 15);
+            nameBox.MaxLength = 1000;
             nameBox.Name = "nameBox";
             nameBox.Size = new Size(284, 26);
             nameBox.TabIndex = 1;
@@ -138,7 +139,7 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.DataGridView dataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameColumn;
+        private DataGridViewTextBoxColumn idColumn;
+        private DataGridViewTextBoxColumn nameColumn;
     }
 }

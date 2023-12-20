@@ -15,6 +15,16 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />
+    <PackageReference Include="Weasel.Tools.Extensions.Common" Version="8.0.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MaterialsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="TarifsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 
 </Project>
