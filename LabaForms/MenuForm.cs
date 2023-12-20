@@ -84,6 +84,7 @@ public partial class MenuForm : Form
     {
         button.Enabled = true;
         Focus();
+        button.Focus();
     }
 
     private async void OnLoad(object sender, EventArgs e)
